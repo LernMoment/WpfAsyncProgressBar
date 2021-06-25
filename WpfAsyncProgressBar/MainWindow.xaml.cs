@@ -20,19 +20,18 @@ namespace WpfAsyncProgressBar
     /// </summary>
     public partial class MainWindow : Window
     {
-        IProgress<int> _progress;
-        BusinessLogic _logic = new BusinessLogic();
-
         public MainWindow()
         {
             InitializeComponent();
-            _progress = new Progress<int>(value => { myProgress.Value = value; });
         }
 
         private async void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            BusinessLogic logic = new BusinessLogic();
+            IProgress<int> progress = new Progress<int>(value => { myProgress.Value = value; });
+
             await Task.Run(async() => {
-                string result = await _logic.DoSomething(_progress);
+                string result = await logic.DoSomething(progress);
             });
         }
     }
