@@ -8,6 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <ProgressBar x:Name="myProgress" Minimum="0" Maximum="100" HorizontalAlignment="Left" Height="15" Margin="250,144,0,0" VerticalAlignment="Top" Width="295"/>
-        <Button x:Name="startButton" Content="Start" HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Height="35" Width="70"/>
+        <Button x:Name="increaseProgressButton" Content="Weiter" HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Height="35" Width="70" Click="IncreaseProgressButton_Click"/>
     </Grid>
 </Window>
